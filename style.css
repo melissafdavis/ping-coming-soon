@@ -108,7 +108,7 @@ button:focus{
 .chart{
   width: 100%;
   padding: 1em;
-  margin-bottom: 6em;
+  margin-bottom: 3em;
 }
 
 .social{
@@ -138,8 +138,11 @@ button:focus{
 .copyright{
   color: hsl(0, 0%, 59%);
   margin-bottom: 2em;
+  font-size: .5em;
 }
 
-footer{
+footer p{
   color: hsl(0, 0%, 59%);
+  font-size: 8px;
+ 
 }
