@@ -26,9 +26,9 @@
   
 
   <p>Subscribe and get notified</p>
-  <form action="">
-    <input type="text" placeholder="Your email address...">
-  <button type="submit">Notify Me</button>
+  <form class="form" action="">
+    <input class="email" type="text" placeholder="Your email address...">
+  <button class="submit" type="submit">Notify Me</button>
 </form>
 
   
@@ -59,4 +59,84 @@
 </body>
 
 <script src="https://kit.fontawesome.com/066e409530.js" crossorigin="anonymous"></script>
+
+<script>
+
+  const email = document.querySelector('.email');
+ 
+
+  const button = document.querySelector('.submit');
+ 
+
+  const form = document.querySelector('.form');
+  console.log(form);
+
+  const addEmail = 'Whoops! It looks like you forgot to add your email';
+
+  const fixEmail = "Please provide a valid email address";
+
+  const thanksEmail = "Thanks!";
+
+  button.addEventListener('click', validateEntry);
+  email.addEventListener('click', clearMessage);
+
+  function validateEntry(e) {
+      const re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+    
+      // !email.value? console.log('Whoops! It looks like you forgot to add your email') : console.log('thanks!') ;
+
+      // !re.test(email.value) ? console.log("Please provide a valid email address") : console.log('thanks, bruh');
+
+      if(!email.value){
+        message = addEmail;
+        errorMessage(message);
+       
+      
+      }else if (!re.test(email.value)){
+        message = fixEmail;
+        errorMessage(message);
+    
+
+      }else{
+        message = thanksEmail;
+        errorMessage(message);
+      }
+      
+      e.preventDefault();
+      
+    }
+
+    function errorMessage(){
+      var node= document.createElement('p');
+      node.className = "errorMessage";
+      var Message = document.createTextNode(message);
+      node.appendChild(Message);
+      var parent = form;
+      parent.appendChild(node);
+
+      event.preventDefault();
+    
+    }
+
+    function successMessage(){
+      var node= document.createElement('p');
+      node.className = "errorMessage";
+      var Message = document.createTextNode(message);
+      node.appendChild(Message);
+      var parent = form;
+      parent.appendChild(node);
+
+      event.preventDefault();
+    }
+
+    function clearMessage(){
+      parent = form;
+      if (parent.hasChildNodes()) {
+      parent.removeChild(parent.childNodes[5]);
+      }
+}
+
+
+
+</script>
 </html>
