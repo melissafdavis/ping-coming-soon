@@ -146,3 +146,46 @@ footer p{
   font-size: 8px;
  
 }
+
+@media only screen and (min-width: 768px) {
+  .container{
+    padding: 15em;
+    display: flex;
+    flex-direction: column;
+
+
+  }
+
+  .logo{
+    margin: 0 auto;
+    align-content: center;
+    justify-content: center;
+  }
+
+  h1{
+    font-size: 5em;
+  }
+
+  p{
+    font-size: 2em;
+  }
+
+  .form{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  input{
+    width: 30%;
+    padding: 1.8em;
+    margin-right: 1em;
+    border-radius: 35px;
+  }
+
+  button{
+    width: 20%;
+    padding: 1.8em;
+    border-radius: 35px;
+  }
+}
