@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:300,600,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/style.css">
   
   <title>Frontend Mentor | Ping coming soon page</title>
 
@@ -15,20 +19,44 @@
   </style>
 </head>
 <body>
+  <div class="container">
 
-  We are launching soon!
+  <img class = "logo" src="images/logo.svg"> 
+  <div class="headline"><h1>We are launching <span>soon!</span></h1></div>
+  
 
-  Subscribe and get notified
+  <p>Subscribe and get notified</p>
+  <form action="">
+    <input type="text" placeholder="Your email address...">
+  <button type="submit">Notify Me</button>
+</form>
 
-  Notify Me
+  
+  <img class="chart" src="images/illustration-dashboard.png">
 
-  &copy; Copyright Ping. All rights reserved.
+  <div class="social">
+  <div class="icon">
+    <i class="fab fa-facebook-f"></i>
+  </div>
+  <div class="icon">
+    <i class="fab fa-twitter"></i>
+  </div>
+  <div class="icon">
+    <i class="fab fa-instagram"></i>
+  </div>
+</div>
+
+ <p class="copyright">&copy; Copyright Ping. All rights reserved.</p> 
 
   <footer>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="#">Melissa Davis</a>.
     </p>
   </footer>
+
+</div>
 </body>
+
+<script src="https://kit.fontawesome.com/066e409530.js" crossorigin="anonymous"></script>
 </html>
