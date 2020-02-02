@@ -28,7 +28,8 @@
   <p>Subscribe and get notified</p>
   <form class="form" action="">
     <input class="email" type="text" placeholder="Your email address...">
-  <button class="submit" type="submit">Notify Me</button>
+    <p class="message"></p> 
+    <button class="submit" type="submit">Notify Me</button>
 </form>
 
   
@@ -62,43 +63,28 @@
 
 <script>
 
-  const email = document.querySelector('input');
- 
-
+  const input = document.querySelector('.email');
+  const messageEle = document.querySelector('.message');
   const button = document.querySelector('.submit');
- 
-
-  const form = document.querySelector('.form');
-  console.log(form);
 
   const addEmail = 'Whoops! It looks like you forgot to add your email';
-
   const fixEmail = "Please provide a valid email address";
-
   const thanksEmail = "Thanks!";
 
   button.addEventListener('click', validateEntry);
-  email.addEventListener('click', clearMessage);
+  input.addEventListener('click', clearMessage);
 
   function validateEntry(e) {
       const re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
-    
-      // !email.value? console.log('Whoops! It looks like you forgot to add your email') : console.log('thanks!') ;
-
-      // !re.test(email.value) ? console.log("Please provide a valid email address") : console.log('thanks, bruh');
-
-      if(!email.value){
+  
+      if(!input.value){
         message = addEmail;
         errorMessage(message);
-       
-      
-      }else if (!re.test(email.value)){
+      }else if (!re.test(input.value)){
         message = fixEmail;
-        email.value = "";
-        email.placeholder = "Please enter a valid email";
+        input.value = "";
+        input.placeholder = "email@example/com";
         errorMessage(message);
-    
-
       }else{
         message = thanksEmail;
         successMessage(message);
@@ -109,36 +95,41 @@
     }
 
     function errorMessage(){
-      email.className = "email error";
-      var node= document.createElement('p');
-      node.className = "errorMessage";
-      var Message = document.createTextNode(message);
-      node.appendChild(Message);
-      var parent = form;
-      parent.appendChild(node);
+    //   //input.className = "email error";
+        messageEle.className = " message errorMessage";
+        messageEle.innerText = message;
+    //   var node= document.createElement('div');
+    //   node.className = "errorMessage";
+    //   var messageText = document.createTextNode(message);
+    //   node.appendChild(messageText);
+    //   var parent = input;
+    //   parent.appendChild(node);
 
-      event.preventDefault();
+    event.preventDefault();
     
-    }
+     }
 
     function successMessage(){
-      email.className = "email success";
-      var node= document.createElement('p');
-      node.className = "successMessage";
-      var Message = document.createTextNode(message);
-      node.appendChild(Message);
-      var parent = form;
-      parent.appendChild(node);
+      // email.className = "email success";
+      // var node= document.createElement('p');
+      // node.className = "successMessage";
+      // var Message = document.createTextNode(message);
+      // node.appendChild(Message);
+      // var parent = form;
+      // parent.appendChild(node);
+
+        messageEle.className = " message successMessage";
+        messageEle.innerText = message;
 
       event.preventDefault();
     }
 
-    function clearMessage(){
-      parent = form;
-      if (parent.hasChildNodes()) {
-      parent.removeChild(parent.childNodes[5]);
-      }
-}
+     function clearMessage(){
+       input.value = "";
+       input.placeholder= "";
+     }
+        
+
 
 
 
