@@ -25,13 +25,17 @@
 
   <img class = "logo" src="images/logo.svg"> 
   <div class="headline"><h1>We are launching <span>soon!</span></h1></div>
-  
-
   <p>Subscribe and get notified</p>
+
   <form class="form" action="">
+    <div class="input-div">
     <input class="email" type="text" placeholder="Your email address...">
     <p class="message"></p> 
+  </div>
+    
+    <div class="button-div">
     <button class="submit" type="submit">Notify Me</button>
+  </div>
 </form>
 
   
@@ -64,7 +68,6 @@
 
 
 <script>
-
   const input = document.querySelector('.email');
   const messageEle = document.querySelector('.message');
   const button = document.querySelector('.submit');
@@ -78,7 +81,6 @@
 
   function validateEntry(e) {
       const re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
-  
       if(!input.value){
         message = addEmail;
         errorMessage(message);
@@ -91,49 +93,23 @@
         message = thanksEmail;
         successMessage(message);
       }
-      
       e.preventDefault();
-      
     }
-
     function errorMessage(){
-    //   //input.className = "email error";
         messageEle.className = " message errorMessage";
         messageEle.innerText = message;
-    //   var node= document.createElement('div');
-    //   node.className = "errorMessage";
-    //   var messageText = document.createTextNode(message);
-    //   node.appendChild(messageText);
-    //   var parent = input;
-    //   parent.appendChild(node);
-
     event.preventDefault();
     
      }
-
     function successMessage(){
-      // email.className = "email success";
-      // var node= document.createElement('p');
-      // node.className = "successMessage";
-      // var Message = document.createTextNode(message);
-      // node.appendChild(Message);
-      // var parent = form;
-      // parent.appendChild(node);
-
         messageEle.className = " message successMessage";
         messageEle.innerText = message;
 
       event.preventDefault();
     }
-
      function clearMessage(){
        input.value = "";
        input.placeholder= "";
      }
-        
-
-
-
-
 </script>
 </html>
