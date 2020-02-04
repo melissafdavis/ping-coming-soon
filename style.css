@@ -2,11 +2,9 @@
 
 body, html{
   font-family: 'Libre Franklin', sans-serif;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
-.container{
-  padding: 5%;
-}
+
 
 .logo{
   margin-left: 40%;
@@ -17,6 +15,7 @@ body, html{
 
 .headline{
   max-width: 100%;
+  height: auto;
   text-align: center;
 }
 
@@ -35,6 +34,7 @@ span{
 p{
   font-size: .8em;
   text-align: center;
+  height: 15px;
 }
 
 form{
@@ -42,7 +42,7 @@ form{
   flex-direction: column;
   width: 100%;
   margin: 0 auto;
-  margin-bottom: 4em;
+  /* margin-bottom: 4em; */
   margin-top: 2em;
 }
 .input-div{
@@ -55,7 +55,6 @@ form{
 input{
   padding: 1.4em;
   border-radius: 20px;
-  /* margin-bottom: 1em; */
   border: solid 1px hsl(0, 0%, 64%);;
 }
 
@@ -69,10 +68,16 @@ input::placeholder{
   padding: 1em;
 }
 
+.message{
+  font-size:  .6em;
+  height:  10px;
+}
+
 .button-div{
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 1em;
 }
 
 button{
@@ -99,6 +104,10 @@ button:focus{
 
 .error{
   border: solid 1px red;
+}
+
+.message{
+  
 }
 
 
@@ -163,43 +172,72 @@ footer p{
 
 @media only screen and (min-width: 768px) {
   .container{
-    padding: 15em;
     display: flex;
     flex-direction: column;
-
-
   }
 
   .logo{
     margin: 0 auto;
+    margin-top: 5%;
     align-content: center;
     justify-content: center;
+    width: 140px;
+    height: auto;
   }
 
   h1{
     font-size: 5em;
+    padding: 0;
+    margin: .5em 0 0;
   }
 
   p{
     font-size: 2em;
+    padding: 0;
+    margin: .5em 0 2em;
+  }
+
+  .headline{
+    height: auto;
   }
 
   .form{
     display: flex;
     flex-direction: row;
     width: 100%;
+    align-content: center;
+    justify-content: center;
+    margin: 0 auto;
   }
 
+  .input-div{
+    width: 100%;
+    margin-left: 25%;
+  }
   input{
-    width: 30%;
-    padding: 1.8em;
-    margin-right: 1em;
+    width: 80%;
+    padding: 2.4em;
+    
     border-radius: 35px;
   }
 
+  .message{
+    font-size: 1em;
+    height: 20px;
+  }
+.button-div{
+  width: 100%;
+}
   button{
-    width: 20%;
+    width: 40%;
     padding: 1.8em;
     border-radius: 35px;
+  }
+
+  .chart{
+    width: 50%;
+    height: auto;
+    justify-content: right;
+    margin-left: 25%;
   }
 }
