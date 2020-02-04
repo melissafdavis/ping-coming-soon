@@ -40,7 +40,7 @@ p{
 form{
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
   /* margin-bottom: 4em; */
   margin-top: 2em;
@@ -204,32 +204,35 @@ footer p{
   .form{
     display: flex;
     flex-direction: row;
-    width: 100%;
-    align-content: center;
-    justify-content: center;
+    width: 50%;
     margin: 0 auto;
+    justify-content: center;
   }
 
   .input-div{
-    width: 100%;
-    margin-left: 25%;
+    width: 70%;
+    align-items: center;
+    padding-right: 0;
+    flex-basis: 1;
   }
   input{
-    width: 80%;
+    width: 90%;
     padding: 2.4em;
-    
+    margin-right: 0;
     border-radius: 35px;
   }
-
   .message{
     font-size: 1em;
     height: 20px;
   }
-.button-div{
-  width: 100%;
-}
+
+  .button-div{
+  width: 30%;
+  margin: 0 auto;
+  }
+
   button{
-    width: 40%;
+    width: 100%;
     padding: 1.8em;
     border-radius: 35px;
   }
